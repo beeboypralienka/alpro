@@ -8,7 +8,7 @@ int data[] = {2, 3, 8, 12, 17, 22, 45};
 int binarySearch(int angka); 
 
 int main() {
-	int dicari = 17;
+	int dicari = 8;
 	cout<<"index  = {0, 1, 2,  3,  4,  5,  6}"<<endl;
 	cout<<"data[] = {2, 3, 8, 12, 17, 22, 45}"<<endl;
 	cout<<"Angka "<<dicari<<" ada di index "<<binarySearch(dicari);	
@@ -23,22 +23,25 @@ int binarySearch(int angka){
 	center = ( jmlElemen + indexMin ) / 2;
 	
 	if(angka == data[indexMin]){
-		posisi = indexMin;
+		posisi = indexMin;		
 	}else if(angka == data[indexMax]){
-		posisi = indexMax;
+		posisi = indexMax;		
 	}else if(angka == data[center]){
-		posisi = center;
+		posisi = center;		
 	}else{
-		posisi = center;				
+		posisi = center;
+		indexMax = jmlElemen;				
 		while( angka != data[posisi] ){			
 			// kanan
 			if(angka > data[posisi]){
 				indexMin = posisi;
-				posisi = ( indexMin + jmlElemen ) / 2;
+				posisi = ( indexMin + indexMax ) / 2;
+				cout<<posisi<<endl;
 			// kiri
 			}else if(angka < data[posisi]){
 				indexMax = posisi;
 				posisi = ( indexMin + indexMax ) / 2;
+				cout<<posisi<<endl;
 			}			
 		}		
 	}	
