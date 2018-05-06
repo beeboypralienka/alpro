@@ -55,7 +55,7 @@ int binarySearch(int data[], int jmlElemen, int dicari){
 		// Tampilkan index sekarang <-- optional, tidak ada juga tidak apa-apa (di luar algoritma)	
 		cout<<"Index "<<center<<endl;	
 		
-		// Jika angka yang dicari == data[center], maka mengembalikan nilai center (keluar loop)
+		// Jika angka yang dicari == data[center], maka kembalikan nilai center (keluar loop)
 		if( dicari == data[center] ){
 			return center;
 		}
