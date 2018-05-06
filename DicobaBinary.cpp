@@ -49,26 +49,35 @@ int binarySearch(int data[], int jmlElemen, int dicari){
 	
 	// Ulangi proses selama posisi != center
 	while( posisi != center ){
-		// Perbarui posisi menjadi center		
+		
+		// Perbarui posisi menjadi center
+		// Jadi, jika setiap satu kali proses loop selesai tetapi tidak ada perubahan pada nilai center,
+		// maka kondisi loop tidak terpenuhi lagi, artinya berhenti looping	-> untuk mengatasi pencarian nilai yang tidak ada pada array	
 		posisi = center;	
 		
-		// Tampilkan index sekarang <-- optional, tidak ada juga tidak apa-apa (di luar algoritma)	
-		cout<<"Index "<<center<<endl;	
-		
+		// Tampilkan nilai index dan posisi awal <-- optional, tidak ada juga tidak apa-apa (di luar algoritma)
+		cout<<"Center index awal "<<center<<endl;
+		cout<<"Posisi index awal "<<posisi<<endl;		
+						
 		// Jika angka yang dicari == data[center], maka kembalikan nilai center (keluar loop)
 		if( dicari == data[center] ){
 			return center;
 		}
-		// Jika angka yang dicari > data[center], maka perbarui indexMin = center (pencarian ke kanan)
+		// Jika angka yang dicari > data[center], maka perbarui indexMin = center + 1 (pencarian ke kanan)
 		else if( dicari > data[center] ){
-			indexMin = center;													
+			indexMin = center + 1;													
 		}
-		// Jika angka yang dicari < data[center], maka perbarui indexMax = center (pencarian ke kiri)
+		// Jika angka yang dicari < data[center], maka perbarui indexMax = center - 1 (pencarian ke kiri)
 		else{
-			indexMax = center;									
+			indexMax = center - 1;									
 		}
+		
 		// Perbarui nilai center = ( indexMin + indexMax ) / 2
-		center = ( indexMin + indexMax ) / 2;						
+		center = ( indexMin + indexMax ) / 2;
+		
+		// Tampilkan nilai index dan posisi akhir <-- optional, tidak ada juga tidak apa-apa (di luar algoritma)
+		cout<<"Center index akhir "<<center<<endl;
+		cout<<"Posisi index akhir "<<posisi<<endl<<endl;
 	}
 	
 	// Kembalikan nilai -1 setelah proses while sudah tidak terpenuhi lagi (angka yang dicari tidak ada pada array)
