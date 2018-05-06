@@ -45,7 +45,7 @@ int binarySearch(int data[], int jmlElemen, int dicari){
 	int center = ( indexMin + indexMax ) / 2;		
 	
 	// Buat variabel posisi untuk membantu kondisi berhenti perulangan
-	int posisi;		
+	int posisi = 0;		
 	
 	// Ulangi proses selama posisi != center
 	while( posisi != center ){
